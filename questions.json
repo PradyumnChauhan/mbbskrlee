@@ -1,0 +1,81 @@
+[
+  {
+    "kind": "subjective",
+    "category": "short_note",
+    "question": "Enumerate the bones of the upper limb and specify the number of bones in each category.",
+    "ideal_answer": "The upper limb contains 32 bones categorized as follows:\n- Scapula (1 bone)\n- Clavicle (1 bone)\n- Humerus (1 bone)\n- Radius and Ulna (2 bones)\n- Carpal bones (8 bones)\n- Metacarpals (5 bones)\n- Phalanges (14 bones)",
+    "key_points": [
+      "32 bones",
+      "Scapula (1)",
+      "Clavicle (1)",
+      "Humerus (1)",
+      "Radius and ulna (2)",
+      "Carpal bones (8)",
+      "Metacarpals (5)",
+      "Phalanges (14)"
+    ],
+    "evidence_quotes": [
+      "Each upper limb contains 32 bones (Fig. 2.1), namely: Scapula (1), Clavicle (1), Humerus (1), Radius and ulna (2), Carpal bones (8), Metacarpals (5), Phalanges (14)."
+    ],
+    "page_ids": [
+      83
+    ]
+  },
+    {
+    "kind": "mcq",
+    "question": "How many bones are contained in each upper limb?",
+    "options": {
+      "A": "32",
+      "B": "30",
+      "C": "28",
+      "D": "35"
+    },
+    "answer": "A",
+    "explanation": "Each upper limb contains 32 bones as stated.",
+    "evidence_quotes": [
+      "Each upper limb contains 32 bones"
+    ],
+    "page_ids": [
+      1
+    ]
+  }, {
+    "kind": "subjective",
+    "category": "long_essay",
+    "question": "Explain the time of appearance, fusion, and anatomical details of the ossification centres of the humerus.",
+    "ideal_answer": "## Ossification Centres of the Humerus\n### Mid Shaft\n- One primary centre appearing at the 8th week of intrauterine life (IUL).\n\n### Upper End (Three Secondary Centres)\n- Head, Greater tubercle, Lesser tubercle.\n- Appear during the 1st year.\n- Fuse together by the 7th year to form one compound upper epiphysis.\n- This epiphysis joins the shaft by the 20th year.\n\n### Lower End (Four Secondary Centres)\n- Capitulum and lateral flange of trochlea, Medial part of trochlea, Lateral epicondyle, Medial epicondyle.\n- Appear between the 2nd and 6th year; medial epicondyle appears at 6th year separately.\n- Most fuse to form a large compound lower epiphysis by 14th year.\n- The lower epiphysis joins the shaft by 16th–17th year.\n- The medial epicondyle forms a separate small epiphysis and joins the shaft late, around the 18th year.",
+    "key_points": [
+      "Primary centre: shaft at 8th week of IUL",
+      "Upper end secondary centres appear by 1st year, fuse by 7th year",
+      "Upper end epiphysis joins shaft by 20th year",
+      "Lower end secondary centres appear 2nd-6th year",
+      "Lower end epiphysis fuses by 14th year, joins shaft by 16th-17th year",
+      "Medial epicondyle appears separately at 6th year and fuses by 18th year"
+    ],
+    "evidence_quotes": [
+      "Mid shaft: One centre 8th week of IUL",
+      "Upper end: Three centres Head, Greater tubercle, Lesser tubercle year Fuse together during 7th year to form one compound upper epiphysis 5th year Joins with the shaft 20th year",
+      "Lower end: Four centres Capitulum and lateral flange of trochlea Medial part of trochlea Lateral epicondyle 2nd year 10th use together during 14th year to form large compound 12th lower epiphysis year Joins with the shaft 16th–17th year",
+      "Medial epicondyle 6th year (form a separate small lower epiphysis) 18th year"
+    ],
+    "page_ids": [
+      22,
+      23
+    ]
+  }, {
+    "kind": "subjective",
+    "category": "short_essay",
+    "question": "Discuss the common site and reason for nonunion in fractures of the humerus.",
+    "ideal_answer": "## Nonunion in Humerus Fractures\n- Nonunion commonly occurs at the junction of the upper one-third and middle one-third of the humerus.\n- This area has a poor blood supply, predisposing to delayed or absent fracture healing.\n- Nonunion can lead to persistent pain, deformity, and impaired function.\n- Identification of this site helps in surgical planning and management.",
+    "key_points": [
+      "Junction of upper one-third and middle one-third is common nonunion site",
+      "Due to poor blood supply",
+      "Leads to delayed healing or nonunion",
+      "Important clinical consideration"
+    ],
+    "evidence_quotes": [
+      "Nonunion of the fracture of the humerus is common, if fracture occurs at the junction of its upper one-third and middle one-third due to poor blood supply."
+    ],
+    "page_ids": [
+      22
+    ]
+  }]
