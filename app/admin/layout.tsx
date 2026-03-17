@@ -36,6 +36,17 @@ export default function AdminLayout({
         .eq('id', session.user.id)
         .single()
 
+      if (!profileData) {
+        router.push('/auth/login')
+        return
+      }
+
+      // Check if user is admin
+      if (profileData.role !== 'admin') {
+        router.push('/student')
+        return
+      }
+
       setProfile(profileData)
     }
 
