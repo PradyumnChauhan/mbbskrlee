@@ -113,6 +113,12 @@ export default function AdminLoginPage() {
                   </Button>
                 </div>
                 <div className="mt-6 flex flex-col gap-3">
+                  <Link href="/auth/reset-password" className="block">
+                    <Button variant="ghost" className="w-full text-blue-400 hover:text-blue-300 hover:bg-slate-700/50">
+                      Forgot Password?
+                    </Button>
+                  </Link>
+                  
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center">
                       <div className="w-full border-t border-slate-600"></div>

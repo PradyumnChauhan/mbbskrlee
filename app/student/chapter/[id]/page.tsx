@@ -17,19 +17,26 @@ const getQuestionCategory = (question: any) => {
     ? JSON.parse(question?.question_data) 
     : question?.question_data
 
-  const rawType =
-    qData?.kind ||  // Check kind first (new data format)
-    qData?.category ||
-    qData?.type ||
-    question?.question_type ||
-    question?.category ||
-    ''
+  // For subjective questions, prioritize category over kind
+  // since kind='subjective' doesn't distinguish between short_note/short_essay/long_essay
+  const kind = qData?.kind || ''
+  let rawType = ''
+  
+  if (kind === 'subjective') {
+    // For subjective, use category to differentiate
+    rawType = qData?.category || qData?.type || question?.question_type || question?.category || ''
+  } else {
+    // For non-subjective, use kind first
+    rawType = kind || qData?.category || qData?.type || question?.question_type || question?.category || ''
+  }
 
   const normalized = String(rawType || '').trim().toLowerCase()
 
   if (['mcq', 'short_note', 'shortessay', 'short essay', 'long_essay', 'longessay', 'long essay', 'subjective'].includes(normalized)) {
     if (normalized === 'shortessay' || normalized === 'short essay') return 'short_essay'
     if (normalized === 'longessay' || normalized === 'long essay') return 'long_essay'
+    if (normalized === 'short_note') return 'short_note'
+    if (normalized === 'long_essay') return 'long_essay'
     return normalized === 'subjective' ? 'short_essay' : normalized
   }
 
@@ -109,7 +116,7 @@ export default function ChapterPracticePage() {
   const [chapter, setChapter] = useState<any>(null)
   const [book, setBook] = useState<any>(null)
   const [subjectId, setSubjectId] = useState<string>('')
-  const [questions, setQuestions] = useState([])
+  const [questions, setQuestions] = useState<any[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [answers, setAnswers] = useState<any>({})
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set())
@@ -390,7 +397,7 @@ export default function ChapterPracticePage() {
       )
 
       // Update local answers state for immediate UI consistency
-      setAnswers(prev => ({
+      setAnswers((prev: any) => ({
         ...prev,
         [currentQuestion.id]: {
           ...(prev[currentQuestion.id] || {}),
@@ -540,17 +547,17 @@ export default function ChapterPracticePage() {
               </div>
             ) : questionCategory === 'short_note' ? (
               // Short note read-only content
-              <div className="p-4 bg-muted rounded-lg">
-                <p className="text-sm leading-relaxed">
+              <div className="p-4 bg-muted rounded-lg space-y-3 prose prose-sm dark:prose-invert max-w-none">
+                <div className="text-sm leading-relaxed whitespace-pre-wrap text-foreground">
                   {currentQuestion?.question_data?.ideal_answer || currentQuestion?.ideal_answer || 'No short note content available.'}
-                </p>
+                </div>
               </div>
             ) : (
               // Short essay / long essay / subjective answer
-              <div className="p-4 bg-muted rounded-lg">
-                <p className="text-sm leading-relaxed">
-                  This is essay practice. Write your answer in your notebook, then mark as done.
-                </p>
+              <div className="p-4 bg-muted rounded-lg space-y-3 prose prose-sm dark:prose-invert max-w-none">
+                <div className="text-sm leading-relaxed whitespace-pre-wrap text-foreground">
+                  {currentQuestion?.question_data?.ideal_answer || currentQuestion?.ideal_answer || 'No essay content available.'}
+                </div>
               </div>
             )}
 

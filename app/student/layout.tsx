@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { BookOpen, Clock3, LogOut, Menu, X } from 'lucide-react'
+import { BookOpen, Clock3, LogOut, Menu, X, Video } from 'lucide-react'
 import Link from 'next/link'
 
 export default function StudentLayout({
@@ -144,6 +144,13 @@ export default function StudentLayout({
             >
               Bookmarks
             </Link>
+            <Link
+              href="/student/telegram"
+              className="text-sm font-medium text-slate-600 hover:text-rose-600 transition-colors flex items-center gap-1.5"
+            >
+              <Video className="h-4 w-4" />
+              Telegram
+            </Link>
             <div className="flex items-center gap-4 ml-auto pl-8 border-l border-rose-100">
               <span className="text-sm text-slate-600">
                 {profile.full_name || profile.username}
@@ -191,6 +198,14 @@ export default function StudentLayout({
               onClick={() => setIsOpen(false)}
             >
               Bookmarks
+            </Link>
+            <Link
+              href="/student/telegram"
+              className="px-3 py-2 rounded-lg text-sm font-medium text-rose-700 hover:bg-rose-100 transition-colors flex items-center gap-2"
+              onClick={() => setIsOpen(false)}
+            >
+              <Video className="h-4 w-4" />
+              Telegram
             </Link>
             <Button
               variant="ghost"
